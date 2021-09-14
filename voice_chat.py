@@ -4,7 +4,8 @@ import requests
 import json
 
 import speech_recognition as sr
-
+from gtts import gTTS
+from T2Speech import play_music
 bot_hearing = sr.Recognizer()
 
 
@@ -29,7 +30,10 @@ def run_dialogue():
         response = requests.post('http://localhost:5002/webhooks/rest/webhook', json={'message': u_input})
         bot_res=response.json()
         for i in bot_res:
-            # print(response[i]['text'])
             print("Bot response: \n" + i['text'])
+            path = "voice.mp3"
+            tex2voice = gTTS(text=i['text'], lang='vi', slow=False)
+            tex2voice.save(path)
+            play_music(path)
 
-run_dialogue()
+run_dialogue()            

@@ -18,6 +18,7 @@ from bs4 import BeautifulSoup
 import json
 import list_event
 
+
 response = requests.get("https://tuoitre.vn/tin-moi-nhat.htm")
 soup = BeautifulSoup(response.content, "html.parser")
 # print(soup)
@@ -39,9 +40,13 @@ class action_get_newspaper(Action):
             url = 'https://tuoitre.vn/tin-moi-nhat.htm'
             with open('bot_calendar/data.json', 'w') as file:
                 json.dump(list_news, file)
-            # dispatcher.utter_message(return_msg)
+
             for x in range(0, 10):
-                dispatcher.utter_message(text=str(x+1)+ "." + titles[x+1])
+                res = str(x+1)+ "." + titles[x+1]
+                # Text response
+                dispatcher.utter_message(text=res)
+                
+
             return []
 
 class action_get_detail(Action):
@@ -71,7 +76,9 @@ class action_get_detail(Action):
             for filterOut in soup.find_all('div', { 'class': 'VCSortableInPreviewMode' }):
                 filterOut.decompose()
 
-            dispatcher.utter_message(htmlTags.text)
+            res = htmlTags.text
+            # Text response
+            dispatcher.utter_message(text=res)
             return []
         
 
