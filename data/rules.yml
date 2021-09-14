@@ -1,0 +1,44 @@
+version: "2.0"
+
+rules:
+
+- rule: respond to greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+- rule: respond to thank
+  steps:
+  - intent: thank
+  - action: utter_thank
+- rule: respond to bye
+  steps:
+  - intent: bye
+  - action: utter_bye
+- rule: respond to ask_func_list
+  steps:
+  - intent: ask_func_list
+  - action: utter_func_list
+- rule: respond to ask_name
+  steps:
+  - intent: ask_name
+  - action: utter_ask_name
+- rule: respond to give_name
+  steps:
+  - intent: give_name
+  - action: utter_greet_with_name
+- rule: respond to ask_newspaper
+  steps:
+  - intent: ask_newspaper
+  - action: action_get_newspaper
+- rule: respond to ask_detail
+  steps:
+  - intent: ask_detail
+  - action: action_get_detail
+- rule: respond to ask_event_day
+  steps:
+  - intent: ask_event_day
+  - action: action_get_event_day
+- rule: respond to ask_event_month
+  steps:
+  - intent: ask_event_month
+  - action: action_get_event_month

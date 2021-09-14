@@ -1,0 +1,147 @@
+version: "2.0"
+
+stories:
+- story: hỏi nội dung tin mới
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: ask_newspaper
+  - action: action_get_newspaper
+  - intent: ask_detail
+  - action: action_get_detail
+
+- story: Chào hỏi và hỏi chủ đề tin mới
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_newspaper
+  - action: action_get_newspaper
+  - intent: ask_detail
+  - action: action_get_detail
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: bye
+  - action: utter_bye
+
+- story: Chào hỏi và hỏi lịch mới
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: bye
+  - action: utter_bye
+
+- story: Hỏi sự kiện mới và tạm biệt
+  steps:
+  - intent: ask_event_day
+  - action: action_get_event_day
+  - intent: bye
+  - action: utter_bye
+
+- story: Hỏi sự kiện mới và tạm biệt
+  steps:
+  - intent: ask_event_month
+  - action: action_get_event_month
+  - intent: bye
+  - action: utter_bye
+
+- story: Chào action tên action hỏi chức năng action chào
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: ask_func_list
+  - action: utter_func_list
+  - intent: bye
+  - action: utter_bye
+
+- story: Chàoaction hỏi chức năng action chào
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_func_list
+  - action: utter_func_list
+
+- story: Chào hỏi đưa tên
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+  - action: utter_greet_with_name
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: bye
+  - action: utter_bye
+
+- story: Đưa tên luôn
+  steps:
+  - intent: give_name
+  - action: utter_greet_with_name
+
+- story: Chào action tên action hỏi chức năng action chào
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: ask_func_list
+  - action: utter_func_list
+  - intent: bye
+  - action: utter_bye
+
+- story: Chàoaction hỏi chức năng action chào
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_func_list
+  - action: utter_func_list
+  - intent: bye
+  - action: utter_bye
+
+- story: Chàoaction hỏi tên action chào
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: bye
+  - action: utter_bye
+
+- story: Hỏi tên action hỏi chức năng
+  steps:
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: ask_func_list
+  - action: utter_func_list
+
+- story: Cảm ơn
+  steps:
+  - intent: thank
+  - action: utter_thank
+  - intent: bye
+  - action: utter_bye
+
+- story: Chàoaction hỏi tên action chào
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: bye
+  - action: utter_bye
+
+- story: Hỏi tên action hỏi chức năng
+  steps:
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: ask_func_list
+  - action: utter_func_list
+
+- story: Cảm ơn
+  steps:
+  - intent: thank
+  - action: utter_thank

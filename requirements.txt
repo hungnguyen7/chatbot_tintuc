@@ -1,0 +1,6 @@
+rasa==2.8.6
+bs4==0.0.1
+google-api-python-client==2.20.0
+PyAudio==0.2.11
+SpeechRecognition==3.8.1
+requests==2.25.1
