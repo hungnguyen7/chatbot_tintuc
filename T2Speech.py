@@ -1,5 +1,5 @@
 from playsound import playsound
-def play_music(path):
+def play_sound(path):
     try:
         playsound(path)
     except: 

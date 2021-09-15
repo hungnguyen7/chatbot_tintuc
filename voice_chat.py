@@ -5,7 +5,7 @@ import json
 
 import speech_recognition as sr
 from gtts import gTTS
-from T2Speech import play_music
+from T2Speech import play_sound
 bot_hearing = sr.Recognizer()
 
 
@@ -34,6 +34,6 @@ def run_dialogue():
             path = "voice.mp3"
             tex2voice = gTTS(text=i['text'], lang='vi', slow=False)
             tex2voice.save(path)
-            play_music(path)
+            play_sound(path)
 
 run_dialogue()            
