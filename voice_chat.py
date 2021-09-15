@@ -2,6 +2,7 @@
 #-----------
 import requests
 import json
+import os
 
 import speech_recognition as sr
 from gtts import gTTS
@@ -12,6 +13,10 @@ bot_hearing = sr.Recognizer()
 def run_dialogue():
     
     isContinue = True
+    
+    # Print the current working directory
+    cwd = os.getcwd()
+    print("Current working directory: {0}".format(cwd))
     
     while isContinue:
         with sr.Microphone() as mic: 
@@ -31,7 +36,7 @@ def run_dialogue():
         bot_res=response.json()
         for i in bot_res:
             print("Bot response: \n" + i['text'])
-            path = "voice.mp3"
+            path = os.path.join(cwd, "voice.mp3")
             tex2voice = gTTS(text=i['text'], lang='vi', slow=False)
             tex2voice.save(path)
             play_sound(path)
