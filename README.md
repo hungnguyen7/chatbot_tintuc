@@ -1,11 +1,13 @@
 # Cách cài đặt
 
+***Python 3.8.x***
+
 ***Nên sử dụng Anaconda hoặc virtualenv để tạo môi trường ảo***
 1. Cài đặt các package có trong file `requirements.txt`
 
-1.a. Nếu bị lỗi PyAudio hãy tìm hiểu cách khắc phục tại https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14 
+  1.a. Nếu bị lỗi PyAudio hãy tìm hiểu cách khắc phục tại https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14 
 
-1.b. Nếu bị lỗi gói google-api-python-client thì chạy câu lệnh pip install --upgrade google-api-python-client
+  1.b. Nếu bị lỗi gói google-api-python-client thì chạy câu lệnh pip install --upgrade google-api-python-client
 
 2. Gõ lệnh `rasa run actions` để chạy custom action: lấy tin tức, lấy lịch
 
