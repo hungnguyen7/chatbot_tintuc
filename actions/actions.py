@@ -17,7 +17,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import list_event
-
+from datetime import datetime
 
 response = requests.get("https://tuoitre.vn/tin-moi-nhat.htm")
 soup = BeautifulSoup(response.content, "html.parser")
@@ -31,6 +31,7 @@ list_titles = []
 for x in range(0,10):
     list_news[str(x)] = 'https://tuoitre.vn' + titlesLinks[x]
 
+file_name = ''
 class action_get_newspaper(Action):
     def name(self) -> Text:
             return "action_get_newspaper"
@@ -38,7 +39,12 @@ class action_get_newspaper(Action):
              tracker: Tracker,
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             url = 'https://tuoitre.vn/tin-moi-nhat.htm'
-            with open('bot_calendar/data.json', 'w') as file:
+
+            now = datetime.now()
+            global file_name
+            file_name = now.strftime("%d%m%Y%H%M%S")
+            # print(file_name)
+            with open('bot_calendar/{}.json'.format(file_name), 'w') as file:
                 json.dump(list_news, file)
 
             for x in range(0, 10):
@@ -60,7 +66,8 @@ class action_get_detail(Action):
             text = tracker.latest_message['text']
             arr_temp = text.split()
             url = ""
-            with open('bot_calendar/data.json', 'r') as file:
+            # print(file_name)
+            with open('bot_calendar/{}.json'.format(file_name), 'r') as file:
                     url_dict = json.load(file)
             for x in arr_temp:
                 try:
