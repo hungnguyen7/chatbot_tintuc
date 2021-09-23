@@ -36,6 +36,6 @@ def run_dialogue():
             print("Bot response: \n" + i['text'])
 
             # text2speech(text, speed)
-            text2speech(i['text'], 2.0)
+            text2speech(i['text'], 1.2)
 
 run_dialogue()            

@@ -8,6 +8,9 @@
   1.a. Nếu bị lỗi PyAudio hãy tìm hiểu cách khắc phục tại https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14 
 
   1.b. Nếu bị lỗi gói google-api-python-client thì chạy câu lệnh pip install --upgrade google-api-python-client
+  
+  1.c. Nếu bị lỗi "Couldn't find ffprobe or avprobe - defaulting to ffprobe, but may not work" hãy tìm hiểu cách khắc phục tại
+  https://stackoverflow.com/questions/51219531/pydub-unable-to-locate-ffprobe
 
 2. Gõ lệnh `rasa run actions` để chạy custom action: lấy tin tức, lấy lịch
 
