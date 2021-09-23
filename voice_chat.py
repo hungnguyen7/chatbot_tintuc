@@ -23,14 +23,19 @@ def run_dialogue():
                 u_input = bot_hearing.recognize_google(audio, language="vi-VN")
             except:
                 u_input = ""
-        
-               
         print("Customer: " + u_input)
-        
+
+        # khi người dùng nói những từ này sẽ dừng voice
+        stop_command = "kết thúc"
+        if u_input.lower() == stop_command:
+            isContinue = False
+
         response = requests.post('http://localhost:5002/webhooks/rest/webhook', json={'message': u_input})
         bot_res=response.json()
         for i in bot_res:
             print("Bot response: \n" + i['text'])
-            text2speech(i['text'])
+
+            # text2speech(text, speed)
+            text2speech(i['text'], 2.0)
 
 run_dialogue()            
