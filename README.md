@@ -20,3 +20,5 @@ Terminal 1: `rasa run actions` để chạy file custom action
 Terminal 2: `rasa run -m models --endpoints endpoints.yml --port 5002 --credentials credentials.yml` để kích hoạt Rest API Rasa
 
 Terminal 3: `python voice_bot.py` để chạy file nhận dạng giọng nói
+
+Nói `kết thúc` để kết thúc cuộc hội thoại
